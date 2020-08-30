@@ -71,17 +71,23 @@ We iterate through this map to find out reference to each key, value pair starti
  
 3. Navigate: We are using Dijkstra’s algorithm as described below:
  
-* After taking the Source (x1, y1) and destination (x2, y2) coordinates from the user, we verify if the source and destination are known intersection in the graph.
-* We take the source, place the source in “distance” Map as key and zero as the value, then we insert it into the Unvisited set of the intersection. 
-* Going further we iterate the below steps until the unvisited set of Intersection is having no other elements.
+   * After taking the Source (x1, y1) and destination (x2, y2) coordinates from the user, we verify if the source and destination are known intersection in the graph.
+   * We take the source, place the source in “distance” Map as key and zero as the value, then we insert it into the Unvisited set of the intersection. 
+   * Going further we iterate the below steps until the unvisited set of Intersection is having no other elements.
  
-I.    We find the “Intersection” available in the Unvisited set of the intersection, having the minimal distance from the Source looking into “distance” map.
-II.    We pick the “Intersection” found from the above step and find its       corresponding neighbors and place them in the list of neighbors.
-III.   We compare the distance of all the neighbors (available in the list) from the source and find the “closest neighbor” with minimal distance.
-IV.   Place the neighbor intersection and the distance into the “Distance” map.
-V.    Place the neighbor intersection into the set of the unvisited intersection.
-VI.   Make an entry into the map “predecessors” as < neighbor intersection, Intersection>.
-VII.   Remove the “intersection” from the unvisited set of intersections.
+   I.    We find the “Intersection” available in the Unvisited set of the intersection, having the minimal distance from the Source looking into “distance” map.
+   
+   II.    We pick the “Intersection” found from the above step and find its       corresponding neighbors and place them in the list of neighbors.
+   
+   III.   We compare the distance of all the neighbors (available in the list) from the source and find the “closest neighbor” with minimal distance.
+   
+   IV.   Place the neighbor intersection and the distance into the “Distance” map.
+   
+   V.    Place the neighbor intersection into the set of the unvisited intersection.
+   
+   VI.   Make an entry into the map “predecessors” as < neighbor intersection, Intersection>.
+   
+   VII.   Remove the “intersection” from the unvisited set of intersections.
  
 4. Once the above iteration ends Iterate through the “predecessors” map 
 find out reference to each key, value pair; starting from destination until we reach the source, to find the path in the backward direction. 
